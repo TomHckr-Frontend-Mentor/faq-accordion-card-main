@@ -70,7 +70,7 @@ body {
     border-radius: 20px;
     padding-top: 130px;
     padding-bottom: 30px;
-    max-width: 320px;
+    width: clamp(0px, 350px, 90%);
     margin: 0 10px;
     box-shadow: 0 10px 10px rgba(74, 75, 94, .25);
 }
@@ -96,17 +96,17 @@ h1.heading {
     display: inline;
 }
 
-.toggle p {
+.expandable {
     grid-row: 2;
     margin-top: 10px;
     color: var(--grayish-blue);
-    /* display: none; */
 }
 
 .arrow {
     grid-column: 2;
     margin-left: 20px;
     align-self: center;
+    cursor: pointer;
 }
 
 .toggle:after {
