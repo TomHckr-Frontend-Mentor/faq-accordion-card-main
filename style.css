@@ -83,9 +83,11 @@ h1.heading {
 .toggle {
     width: 90%;
     margin: 0 auto;
+    padding-top: 18px;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
+    cursor: pointer;
 }
 
 .toggle h2 {
@@ -100,13 +102,15 @@ h1.heading {
     grid-row: 2;
     margin-top: 10px;
     color: var(--grayish-blue);
+    display: none;
+    line-height: 0;
+    opacity: 0;
 }
 
 .arrow {
     grid-column: 2;
     margin-left: 20px;
     align-self: center;
-    cursor: pointer;
 }
 
 .toggle:after {
@@ -114,9 +118,9 @@ h1.heading {
     display: block;
     height: 1px;
     background-color: var(--light-grayish-blue);
-    margin: 18px 0;
     width: 100%;
     grid-column: span 2;
+    margin-top: 18px;
 }
 
 /* attribution */

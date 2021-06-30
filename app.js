@@ -1,39 +1,48 @@
-const arrows = document.querySelectorAll(".arrow");
+const toggles = document.querySelectorAll(".toggle");
 
-arrows.forEach(item => {
+toggles.forEach(item => {
     item.addEventListener("click", e => {
-    expand(item, item.parentElement.querySelector(".expandable"))
+    expand(item.querySelector(".arrow"), item.querySelector(".expandable"))
 })})
 
 function expand (arrow, expandable) {
-    const timeline = gsap.timeline({ paused: true });
-    timeline
-        .to(expandable, {
-            duration: 0,
-            lineHeight: 0,
-            display: "",
-            opacity: 0
-        })
-        .to(expandable, {
+    if (expandable.offsetHeight === 0) {
+        const tl = gsap.timeline()
+        tl
+            .to(expandable, {
             duration: .3,
-            lineHeight: 1
-        })
-        .to(expandable, {
-            duration: .2,
-            opacity: 1
-        })
-        .to(arrow, {
+            lineHeight: 1,
+            display: "block"
+            })
+            .to(expandable, {
+                duration: .2,
+                opacity: 1
+            })
+        gsap.to(arrow, {
             duration: .5,
             rotate: "180"
         })
-    timeline.pause()
-    if (expandable.style.display === "none") {
+    } else {
+        const tl = gsap.timeline()
+        tl
+            .to(expandable, {
+                duration: .2,
+                opacity: 0
+            })
+            .to(expandable, {
+                duration: .3,
+                lineHeight: 0,
+                marginTop: 0
+            })
+            .to(expandable, {
+                display: "none",
+            })
+            .to(expandable, {
+                marginTop: "10px",
+            })
         gsap.to(arrow, {
-        rotate: "180deg"
+            duration: .5,
+            rotate: "0"
         })
-        timeline.resume();
-        console.log(expandable.display)
-    } else if (expandable.style.display === "") {
-        timeline.restart();
     }
 }
