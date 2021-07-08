@@ -56,7 +56,7 @@ body {
     max-width: 200px;
 }
 
-.image-shadow {
+.mobile-shadow {
     transform: translate(10%, -95%);
 }
 
@@ -134,4 +134,53 @@ h1.heading {
 .attribution a {
     color: #fff;
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 850px) {
+    .card {
+        width: clamp(60vw, 70vw, 90vw);
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10%;
+        padding: 0;
+    }
+
+    .faq-graphics-mobile {
+        display: none;
+    }
+
+    .faq-graphics-desktop {
+        display: grid;
+        background-image: url("images/bg-pattern-desktop.svg");
+        background-position: right;
+        background-size: 200%;
+        background-repeat: no-repeat;
+    }
+
+    .woman-graphics-desktop {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .woman-desktop {
+        position: relative;
+        transform: translateX(-100px);
+    }
+
+    .card-content {
+        padding: 50px 50px 50px 0;
+    }
+
+    h1.heading {
+        text-align: left;
+    }
+
+    .toggle {
+        margin: 0;
+    }
+
 }
