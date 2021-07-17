@@ -5,6 +5,11 @@ toggles.forEach(item => {
     expand(item.querySelector(".arrow"), item.querySelector(".expandable"))
 })})
 
+console.log(document.querySelector('.woman-mobile').offsetHeight);
+document.querySelector('.faq-graphics-mobile').style.height = document.querySelector('.woman-mobile').offsetHeight/2 + "px";
+console.log(document.querySelector('.faq-graphics-mobile').offsetHeight);
+
+
 function expand (arrow, expandable) {
     if (expandable.offsetHeight === 0) {
         const tl = gsap.timeline()

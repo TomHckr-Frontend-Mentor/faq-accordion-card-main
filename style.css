@@ -49,15 +49,18 @@ body {
 }
 
 .faq-graphics-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.woman-mobile {
     position: absolute;
-    transform: translateX(6%);
-    display: block;
-    top: 25px;
-    max-width: 200px;
+    transform: translate(-15px, -55%);
 }
 
 .mobile-shadow {
-    transform: translate(10%, -95%);
+    transform: translateY(5px);
 }
 
 
@@ -68,8 +71,7 @@ body {
 .card {
     background-color: #fff;
     border-radius: 20px;
-    padding-top: 130px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
     width: clamp(0px, 350px, 90%);
     margin: 0 10px;
     box-shadow: 0 10px 10px rgba(74, 75, 94, .25);
@@ -138,7 +140,7 @@ h1.heading {
 
 @media only screen and (min-width: 850px) {
     .card {
-        width: clamp(60vw, 70vw, 90vw);
+        width: clamp(50vw, 80vw, 750px);
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -151,24 +153,24 @@ h1.heading {
     }
 
     .faq-graphics-desktop {
-        display: grid;
+        display: flex;
         background-image: url("images/bg-pattern-desktop.svg");
         background-position: right;
         background-size: 200%;
         background-repeat: no-repeat;
-    }
-
-    .woman-graphics-desktop {
-        height: 100%;
-        width: 100%;
-        display: flex;
         align-items: center;
-        overflow: hidden;
+    }
+    
+    .desktop-box {
+        height: 100px;
+        width: 100px;
+        display: block;
+        position: absolute;
     }
 
     .woman-desktop {
-        position: relative;
         transform: translateX(-100px);
+        max-width: 140%;
     }
 
     .card-content {
